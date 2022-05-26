@@ -10,14 +10,14 @@ function App() {
     },
     {
       id: "ex2",
-      title: "Health Insurance",
-      amount: 242.65,
+      title: "Macbook Air",
+      amount: 855.05,
       date: new Date(2022, 5, 23),
     },
     {
       id: "ex3",
-      title: "Car Insurance",
-      amount: 32.31,
+      title: "Macbook Air Bag/Sleeve",
+      amount: 14.04,
       date: new Date(2022, 5, 23),
     },
   ];
