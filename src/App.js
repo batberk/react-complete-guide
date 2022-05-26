@@ -10,7 +10,7 @@ function App() {
     },
     {
       id: "ex2",
-      title: "Macbook Air",
+      title: "Macbook Air 2020",
       amount: 855.05,
       date: new Date(2022, 5, 23),
     },
