@@ -1,5 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem";
-
+import Expenses from "./components/Expenses";
 function App() {
   const expenses = [
     {
@@ -16,31 +15,12 @@ function App() {
     },
     {
       id: "ex3",
-      title: "Macbook Air 2020 13.3 Bag/Sleeve",
+      title: "Macbook Air 2020 13.3 inch Bag/Sleeve",
       amount: 14.04,
       date: new Date(2022, 5, 23),
     },
   ];
-  return (
-    <div>
-      <h1>Let's get starteddddd!</h1>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      />{" "}
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      />{" "}
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      />
-    </div>
-  );
+  return <Expenses arr={expenses} />;
 }
 
 export default App;
