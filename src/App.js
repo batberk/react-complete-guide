@@ -16,7 +16,7 @@ function App() {
     },
     {
       id: "ex3",
-      title: "Macbook Air Bag/Sleeve",
+      title: "Macbook Air 2020 13.3 Bag/Sleeve",
       amount: 14.04,
       date: new Date(2022, 5, 23),
     },
