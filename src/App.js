@@ -25,6 +25,12 @@ function App() {
       amount: 14.04,
       date: new Date(2022, 5, 23),
     },
+    {
+      id: "ex5",
+      title: "GitHub Copilot guess-Macbook Air 2020 13.3 inch Bag/Sleeve",
+      amount: 14.04,
+      date: new Date(2022, 5, 23),
+    },
   ];
   return <Expenses arr={expenses} />;
 }
