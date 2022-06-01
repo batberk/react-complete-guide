@@ -9,7 +9,7 @@ function App() {
     },
     {
       id: "ex2",
-      title: "Macbook Air 2020  8 ram 256 ssd",
+      title: "Macbook Aaair 2020  8 ram 256 ssd",
       amount: 855.05,
       date: new Date(2022, 5, 23),
     },
