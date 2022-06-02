@@ -1,4 +1,5 @@
 import Expenses from "./components/Expense-components/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
   const expenses = [
     {
@@ -32,7 +33,12 @@ function App() {
       date: new Date(2022, 5, 23),
     },
   ];
-  return <Expenses arr={expenses} />;
+  return (
+  <div>
+    <NewExpense />
+    <Expenses arr={expenses} />;
+  </div> 
+  );
 }
 
 export default App;
