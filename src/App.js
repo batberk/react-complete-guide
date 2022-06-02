@@ -34,10 +34,11 @@ function App() {
     },
   ];
   return (
-  <div>
-    <NewExpense />
-    <Expenses arr={expenses} />;
-  </div> 
+    //<NewExpense expenses={expenses} />
+    <div>
+      <NewExpense />
+      <Expenses arr={expenses} />;
+    </div>
   );
 }
 
