@@ -10,15 +10,18 @@ const ExpenseForm = () => {
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
-    console.log(title);
+    //console.log(title);
+    console.log(event.target.value);
   };
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
-    console.log(amount);
+    //console.log(amount);
+    console.log(event.target.value);
   };
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
-    console.log(date);
+    //console.log(date);
+    console.log(event.target.value);
   };
   //   const addExpenseHandler = (event) => {
   //     event.preventDefault();
