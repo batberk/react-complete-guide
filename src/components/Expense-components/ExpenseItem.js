@@ -10,7 +10,7 @@ function ExpenseItem(props) {
   let amount = props.amount;
   let date = props.date;
   const clickHandler = () => {
-    setTitle( title==="Updated" ?  "Updated2": "Updated");
+    setTitle(title === "Updated" ? "Updated2" : "Updated");
     console.log("clicked");
   };
   return (
