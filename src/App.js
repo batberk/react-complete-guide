@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Expenses from "./components/Expense-components/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
-  const expenses = [
+  
+  const expensesArr = [
     {
       id: "ex1",
       title: "Home Insurance",
@@ -33,10 +35,17 @@ function App() {
       date: new Date(2022, 5, 23),
     },
   ];
+  const [expenses, setExpenses] = useState(expensesArr);
+  const addNewExpenseHandler = (passedExpence) => {
+    setExpenses([...expenses, passedExpence]);
+    console.log("this is in the addNewExpenseHandler");
+    console.log(passedExpence);
+    console.log(expenses);
+    console.log("testtesttest");
+  };
   return (
-    //<NewExpense expenses={expenses} />
     <div>
-      <NewExpense />
+      <NewExpense onNewExpenceAdd={addNewExpenseHandler} />
       <Expenses arr={expenses} />;
     </div>
   );
