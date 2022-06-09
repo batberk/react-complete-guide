@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
 import "./ExpenseForm.css";
-//const ExpenseForm = (props) => {
 const ExpenseForm = () => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState(new Date());
-  //const [expenses, setExpenses] = useState(props.expenses);
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
@@ -23,20 +21,19 @@ const ExpenseForm = () => {
     //console.log(date);
     console.log(event.target.value);
   };
-  //   const addExpenseHandler = (event) => {
-  //     event.preventDefault();
-  //     const addedExpense = {
-  //       newTitle: title,
-  //       newAmount: amount,
-  //       newDate: date,
-  //     };
-  //     setExpenses([...expenses, addedExpense]);
-  //     console.log("Our new expense:");
-  //     console.log(addedExpense);
-  //     console.log(addedExpense.newTitle);
-  //     console.log(addedExpense.newAmount);
-  //     console.log(addedExpense.newDate);
-  //   };
+    const addExpenseHandler = (event) => {
+      event.preventDefault();
+      const addedExpense = {
+        newTitle: title,
+        newAmount: amount,
+        newDate: date,
+      };
+      console.log("Our new expense:");
+      console.log(addedExpense);
+      console.log(addedExpense.newTitle);
+      console.log(addedExpense.newAmount);
+      console.log(addedExpense.newDate);
+    };
   return (
     <form>
       <div className="expense-form__controls">
@@ -66,11 +63,10 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit" onClick={addExpenseHandler}>Add Expense </button>
       </div>
     </form>
   );
-  //   <button type="submit" onClick={addExpenseHandler}>
 };
 
 export default ExpenseForm;
