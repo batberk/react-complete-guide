@@ -4,7 +4,7 @@ import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 
-function Expenses(props) {
+const Expenses = (props) => {
   //state for the filter
   const [getFilter, setGetFilter] = useState("2021");
 
@@ -15,7 +15,6 @@ function Expenses(props) {
   };
   
   
-  // TODO print newly added expences passed somehow.
   //printing should be done dynamically fitting to the array size.
   return (
     <div className="expensesFilter">
@@ -24,12 +23,13 @@ function Expenses(props) {
           selected={getFilter}
           onFilterChange={filterChangeHandlerLiftUp}
           />
-          {props.arr.map((expense) => (
+
+          {props.arr.map((eachExpense) => (
           <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
+            key={eachExpense.id}
+            title={eachExpense.title}
+            amount={eachExpense.amount}
+            date={eachExpense.date}
           />
         ))} 
       </Card>
