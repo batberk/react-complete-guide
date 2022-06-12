@@ -10,7 +10,6 @@ const submitNewExpenseHandler = (addedExpense) => {
   };
   props.onNewExpenceAdd(newExpense);
 }
-//<ExpenseForm expenses={props.expenses}/>
   return (
     <div className="new-expense">
       <ExpenseForm onSubmitNewExpense={submitNewExpenseHandler}/>
