@@ -24,7 +24,7 @@ const Expenses = (props) => {
         />
 
         {props.arr
-          .filter((date) => date.date.getFullYear() === getFilter)
+          .filter((element) => ((element.date.getFullYear().toString()) === getFilter))
           .map((eachExpense) => (
             <ExpenseItem
               key={eachExpense.id}
