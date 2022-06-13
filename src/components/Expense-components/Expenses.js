@@ -5,6 +5,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
 
 const Expenses = (props) => {
+
   //state for the filter
   const [getFilter, setGetFilter] = useState("2021");
 
@@ -13,7 +14,6 @@ const Expenses = (props) => {
     setGetFilter(filter);
     console.log(filter);
   };
-  
   
   //printing should be done dynamically fitting to the array size.
   return (

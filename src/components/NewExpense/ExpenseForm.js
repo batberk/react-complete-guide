@@ -8,14 +8,17 @@ const ExpenseForm = (props) => {
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
+    console.log("title chaneged");
     console.log(event.target.value);
   };
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
+    console.log("amount chaneged");
     console.log(event.target.value);
   };
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
+    console.log("date chaneged");
     console.log(event.target.value);
   };
     const addExpenseHandler = (event) => {
@@ -30,9 +33,9 @@ const ExpenseForm = (props) => {
       setDate(new Date());
       props.onSubmitNewExpense(addedExpense);
       console.log(addedExpense);
-      console.log(addedExpense.newTitle);
-      console.log(addedExpense.newAmount);
-      console.log(addedExpense.newDate);
+      console.log(addedExpense.title);
+      console.log(addedExpense.amount);
+      console.log(addedExpense.date);
 
     };
   return (

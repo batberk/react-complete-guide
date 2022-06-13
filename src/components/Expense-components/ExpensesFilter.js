@@ -6,6 +6,9 @@ const ExpensesFilter = (props) => {
   const filterChangeHandler = (event) => {
     setFilter(event.target.value);
     props.onFilterChange(filter);
+    // the line below is the same as the line above, except it prints the latest value of the filter.
+    // figure why we need filter as a state here.
+    //**********  props.onFilterChange(event.target.value);  *******/
   };
   return (
     <div className="expenses-filter">
