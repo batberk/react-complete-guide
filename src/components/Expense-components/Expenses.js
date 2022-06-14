@@ -1,8 +1,8 @@
-import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import { useState } from "react";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   //state for the filter
@@ -18,20 +18,6 @@ const Expenses = (props) => {
     (element) => element.date.getFullYear().toString() === getFilter
   );
 
-  let expensesDefault =
-    filteredExpenses.length === 0 ? (
-      <p>No expenses found for this year. </p>
-    ) : (
-      filteredExpenses.map((eachExpense) => (
-        <ExpenseItem
-          key={eachExpense.id}
-          title={eachExpense.title}
-          amount={eachExpense.amount}
-          date={eachExpense.date}
-        />
-      ))
-    );
-
   //printing should be done dynamically fitting to the array size.
   return (
     <div className="expensesFilter">
@@ -40,7 +26,7 @@ const Expenses = (props) => {
           selected={getFilter}
           onFilterChange={filterChangeHandlerLiftUp}
         />
-        {expensesDefault}
+        <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
   );
