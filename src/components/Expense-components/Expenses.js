@@ -14,6 +14,24 @@ const Expenses = (props) => {
     console.log(filter);
   };
 
+  const filteredExpenses = props.arr.filter(
+    (element) => element.date.getFullYear().toString() === getFilter
+  );
+
+  let expensesDefault =
+    filteredExpenses.length === 0 ? (
+      <p>No expenses found for this year. </p>
+    ) : (
+      filteredExpenses.map((eachExpense) => (
+        <ExpenseItem
+          key={eachExpense.id}
+          title={eachExpense.title}
+          amount={eachExpense.amount}
+          date={eachExpense.date}
+        />
+      ))
+    );
+
   //printing should be done dynamically fitting to the array size.
   return (
     <div className="expensesFilter">
@@ -22,17 +40,7 @@ const Expenses = (props) => {
           selected={getFilter}
           onFilterChange={filterChangeHandlerLiftUp}
         />
-
-        {props.arr
-          .filter((element) => ((element.date.getFullYear().toString()) === getFilter))
-          .map((eachExpense) => (
-            <ExpenseItem
-              key={eachExpense.id}
-              title={eachExpense.title}
-              amount={eachExpense.amount}
-              date={eachExpense.date}
-            />
-          ))}
+        {expensesDefault}
       </Card>
     </div>
   );
