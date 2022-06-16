@@ -42,6 +42,11 @@ const expensesArr = [
 ];
 
 function App() {
+  const removeExpense = (id) => {
+    console.log(id)
+
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
   const [expenses, setExpenses] = useState(expensesArr);
 
   const addNewExpenseHandler = (passedExpence) => {
@@ -52,7 +57,7 @@ function App() {
   return (
     <div>
       <NewExpense onNewExpenceAdd={addNewExpenseHandler} />
-      <Expenses arr={expenses} />;
+      <Expenses arr={expenses} removeExpense={removeExpense} />;
     </div>
   );
 }
