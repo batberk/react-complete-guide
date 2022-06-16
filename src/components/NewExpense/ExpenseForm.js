@@ -21,23 +21,22 @@ const ExpenseForm = (props) => {
     console.log("date chaneged");
     console.log(event.target.value);
   };
-    const addExpenseHandler = (event) => {
-      event.preventDefault();
-      const addedExpense = {
-        title: addedTitle,
-        amount: addedAmount,
-        date: new Date(addedDate),
-      };
-      setTitle("");
-      setAmount("");
-      setDate(new Date());
-      props.onSubmitNewExpense(addedExpense);
-      console.log(addedExpense);
-      console.log(addedExpense.title);
-      console.log(addedExpense.amount);
-      console.log(addedExpense.date);
-
+  const addExpenseHandler = (event) => {
+    event.preventDefault();
+    const addedExpense = {
+      title: addedTitle,
+      amount: addedAmount,
+      date: new Date(addedDate),
     };
+    setTitle("");
+    setAmount("");
+    setDate(new Date());
+    props.onSubmitNewExpense(addedExpense);
+    console.log(addedExpense);
+    console.log(addedExpense.title);
+    console.log(addedExpense.amount);
+    console.log(addedExpense.date);
+  };
   return (
     <form onSubmit={addExpenseHandler}>
       <div className="expense-form__controls">
@@ -69,6 +68,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={props.onFormClose}>Cancel</button>
         <button type="submit">Add Expense </button>
       </div>
     </form>
