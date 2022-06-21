@@ -30,21 +30,21 @@ const Expenses = (props) => {
       case "last added":
         return filteredExpenses;
       case "increasing":
-        return props.arr
-          .filter(
-            (element) => element.date.getFullYear().toString() === getFilter
-          )
-          .sort((a, b) => {
-            return Number(a.amount) - Number(b.amount);
-          });
+        return filteredExpenses.sort((a, b) => {
+          return Number(a.amount) - Number(b.amount);
+        });
       case "decreasing":
-        return props.arr
-          .filter(
-            (element) => element.date.getFullYear().toString() === getFilter
-          )
-          .sort((a, b) => {
-            return Number(b.amount) - Number(a.amount);
-          });
+        return filteredExpenses.sort((a, b) => {
+          return Number(b.amount) - Number(a.amount);
+        });
+      case "latest":
+        return filteredExpenses.sort((a, b) => {
+          return Number(b.date) - Number(a.date);
+        });
+      case "oldest":
+        return filteredExpenses.sort((a, b) => {
+          return Number(a.date) - Number(b.date);
+        });
       default:
         return filteredExpenses;
     }
